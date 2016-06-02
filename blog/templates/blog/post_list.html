@@ -6,15 +6,13 @@
         <div>
             <h1><a href="">Des's blog</a></h1>
         </div>
-        <div>
-            <p>Published Tuesday 12th April 2016 14:14</p>
-            <h2><a href="">First post</a></h2>
-            <p>Today I'm going to the garage to get the car MOT'd.</p>
-        </div>
-        <div>
-            <p>Published Tuesday 12th April 2016 14:14</p>
-            <h2><a href="">Second post</a></h2>
-            <p>I mentioned that the lights at the back are intermittent because of loose / shaky connections.</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}></a></h1>
+                <p>{{ post.text|linebreaks }}</p>
+            </div>
+                {{ post }}
+        {% endfor %}
     </body>
 </html>
